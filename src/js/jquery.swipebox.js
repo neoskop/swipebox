@@ -15,6 +15,7 @@
 				hideBarsDelay : 3000,
 				videoMaxWidth : 1140,
 				vimeoColor : 'CCCCCC',
+				showCount: false,
 				beforeOpen: null,
 				afterOpen: null,
 				afterClose: null,
@@ -37,6 +38,7 @@
 					<div id="swipebox-caption"></div>\
 					<div id="swipebox-action">\
 						<a id="swipebox-close"></a>\
+						<div id="swipebox-count"></div>\
 						<a id="swipebox-prev"></a>\
 						<a id="swipebox-next"></a>\
 					</div>\
@@ -558,6 +560,9 @@
 					$( '#swipebox-prev' ).addClass( 'disabled' );
 				} else if ( index === elements.length - 1 && plugin.settings.loopAtEnd != true) {
 					$( '#swipebox-next' ).addClass( 'disabled' );
+				}
+				if (plugin.settings.showCount){
+					$('#swipebox-count').text((index+1) + '/' + elements.length);
 				}
 			},
 		
